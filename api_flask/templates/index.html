@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Docker</title>
+</head>
+<body>
+    <h1>This is a Flask App containerised with Docker</h1>
+    <table>
+    
+    <thead>
+      <tr>
+        <th>Bid_Spread</th>
+        <th>Ask_Spread</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <td>{{ session['stock_symbol'] }}</td>
+      <td>{{ session['number_of_shares'] }}</td>
+      <td>${{ session['purchase_price'] }}</td>
+    </tbody>
+  </table>
+</body>
+</html>
