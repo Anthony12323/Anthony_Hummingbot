@@ -1,0 +1,416 @@
+2023-07-13 23:07:40,976 - 1 - hummingbot.client.hummingbot_application - INFO - Creating the clock with tick size: 1.0
+2023-07-13 23:07:41,000 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2023-07-13 23:07:41,079 - 1 - hummingbot.core.network_iterator - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2023-07-13 23:07:43,168 - 1 - hummingbot.connector.exchange.kucoin.kucoin_api_order_book_data_source.KucoinAPIOrderBookDataSource - INFO - Subscribed to public order book and trade channels...
+2023-07-13 23:07:43,475 - 1 - hummingbot.core.data_type.order_book_tracker - INFO - Initialized order book for ETH-USDT. 1/1 completed.
+2023-07-13 23:07:44,866 - 1 - hummingbot.connector.time_synchronizer - NETWORK - Error getting server time.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/connector/time_synchronizer.py", line 65, in update_server_time_offset_with_time_provider
+    server_time_ms: float = await time_provider
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_web_utils.py", line 69, in get_current_server_time
+    response = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/time. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-13 23:07:44,896 - 1 - hummingbot.connector.time_synchronizer - WARNING - Could not refresh server time. Check network connection.
+2023-07-13 23:07:45,015 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (ETH-USDT) Creating 1 bid orders at (Size, Price): ['0.0001 ETH, 1980.673 USDT']
+2023-07-13 23:07:45,031 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (ETH-USDT) Creating 1 ask orders at (Size, Price): ['0.0001 ETH, 2008.597 USDT']
+2023-07-13 23:07:45,208 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1689289665.0, "type": "OrderType.LIMIT", "trading_pair": "ETH-USDT", "amount": "0.0001000", "price": "1980.6730000000", "order_id": "buy://ETH-USDT/903cff0d8b92f80b9b5a468edc", "creation_timestamp": 1689289665.0, "exchange_order_id": null, "leverage": 1, "position": "NIL", "event_name": "BuyOrderCreatedEvent", "event_source": "None_PaperTrade"}
+2023-07-13 23:07:45,288 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1689289665.0, "type": "OrderType.LIMIT", "trading_pair": "ETH-USDT", "amount": "0.0001000", "price": "2008.5970000000", "order_id": "sell://ETH-USDT/032a405e9e87ae3840c66253e3", "creation_timestamp": 1689289665.0, "exchange_order_id": null, "leverage": 1, "position": "NIL", "event_name": "SellOrderCreatedEvent", "event_source": "None_PaperTrade"}
+2023-07-13 23:07:45,674 - 1 - hummingbot.core.rate_oracle.sources.rate_source_base - ERROR - Unexpected error while retrieving rates from Binance. Check the log file for more info.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/core/rate_oracle/sources/binance_rate_source.py", line 57, in _get_binance_prices
+    pairs_prices = await exchange.get_all_pairs_prices()
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_exchange.py", line 120, in get_all_pairs_prices
+    pairs_prices = await self._api_get(path_url=CONSTANTS.TICKER_BOOK_PATH_URL)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 892, in _api_get
+    return await self._api_request(*args, **kwargs)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 934, in _api_request
+    request_result = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/ticker/bookTicker. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-13 23:08:25,099 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2023-07-13 23:08:25,167 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1689289705.0, "order_id": "buy://ETH-USDT/903cff0d8b92f80b9b5a468edc", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "None_PaperTrade"}
+2023-07-13 23:08:25,230 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1689289705.0, "order_id": "sell://ETH-USDT/032a405e9e87ae3840c66253e3", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "None_PaperTrade"}
+2023-07-13 23:12:56,252 - 1 - hummingbot.client.hummingbot_application - INFO - Creating the clock with tick size: 1.0
+2023-07-13 23:12:56,269 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2023-07-13 23:12:56,321 - 1 - hummingbot.core.network_iterator - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2023-07-13 23:12:58,046 - 1 - hummingbot.connector.exchange.kucoin.kucoin_api_order_book_data_source.KucoinAPIOrderBookDataSource - INFO - Subscribed to public order book and trade channels...
+2023-07-13 23:12:58,785 - 1 - hummingbot.core.data_type.order_book_tracker - INFO - Initialized order book for ETH-USDT. 1/1 completed.
+2023-07-13 23:13:00,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (ETH-USDT) Creating 1 bid orders at (Size, Price): ['0.0001 ETH, 1979.541 USDT']
+2023-07-13 23:13:00,003 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (ETH-USDT) Creating 1 ask orders at (Size, Price): ['0.0001 ETH, 2007.449 USDT']
+2023-07-13 23:13:00,215 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1689289980.0, "type": "OrderType.LIMIT", "trading_pair": "ETH-USDT", "amount": "0.0001000", "price": "1979.5410000000", "order_id": "buy://ETH-USDT/abd35fe550f7ea27da0af682b7", "creation_timestamp": 1689289980.0, "exchange_order_id": null, "leverage": 1, "position": "NIL", "event_name": "BuyOrderCreatedEvent", "event_source": "None_PaperTrade"}
+2023-07-13 23:13:00,309 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1689289980.0, "type": "OrderType.LIMIT", "trading_pair": "ETH-USDT", "amount": "0.0001000", "price": "2007.4490000000", "order_id": "sell://ETH-USDT/90b5d9699997da55b3863d128f", "creation_timestamp": 1689289980.0, "exchange_order_id": null, "leverage": 1, "position": "NIL", "event_name": "SellOrderCreatedEvent", "event_source": "None_PaperTrade"}
+2023-07-13 23:13:00,541 - 1 - hummingbot.connector.time_synchronizer - NETWORK - Error getting server time.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/connector/time_synchronizer.py", line 65, in update_server_time_offset_with_time_provider
+    server_time_ms: float = await time_provider
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_web_utils.py", line 69, in get_current_server_time
+    response = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/time. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-13 23:13:00,546 - 1 - hummingbot.connector.time_synchronizer - WARNING - Could not refresh server time. Check network connection.
+2023-07-13 23:13:00,714 - 1 - hummingbot.core.rate_oracle.sources.rate_source_base - ERROR - Unexpected error while retrieving rates from Binance. Check the log file for more info.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/core/rate_oracle/sources/binance_rate_source.py", line 57, in _get_binance_prices
+    pairs_prices = await exchange.get_all_pairs_prices()
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_exchange.py", line 120, in get_all_pairs_prices
+    pairs_prices = await self._api_get(path_url=CONSTANTS.TICKER_BOOK_PATH_URL)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 892, in _api_get
+    return await self._api_request(*args, **kwargs)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 934, in _api_request
+    request_result = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/ticker/bookTicker. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-13 23:14:00,815 - 1 - hummingbot.connector.time_synchronizer - NETWORK - Error getting server time.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/connector/time_synchronizer.py", line 65, in update_server_time_offset_with_time_provider
+    server_time_ms: float = await time_provider
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_web_utils.py", line 69, in get_current_server_time
+    response = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/time. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-13 23:14:00,820 - 1 - hummingbot.connector.time_synchronizer - WARNING - Could not refresh server time. Check network connection.
+2023-07-13 23:14:00,968 - 1 - hummingbot.core.rate_oracle.sources.rate_source_base - ERROR - Unexpected error while retrieving rates from Binance. Check the log file for more info.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/core/rate_oracle/sources/binance_rate_source.py", line 57, in _get_binance_prices
+    pairs_prices = await exchange.get_all_pairs_prices()
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_exchange.py", line 120, in get_all_pairs_prices
+    pairs_prices = await self._api_get(path_url=CONSTANTS.TICKER_BOOK_PATH_URL)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 892, in _api_get
+    return await self._api_request(*args, **kwargs)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 934, in _api_request
+    request_result = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/ticker/bookTicker. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-13 23:14:45,259 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2023-07-13 23:14:45,318 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1689290085.0, "order_id": "buy://ETH-USDT/abd35fe550f7ea27da0af682b7", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "None_PaperTrade"}
+2023-07-13 23:14:45,442 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1689290085.0, "order_id": "sell://ETH-USDT/90b5d9699997da55b3863d128f", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "None_PaperTrade"}
+2023-07-14 05:28:33,338 - 1 - hummingbot.client.hummingbot_application - INFO - Creating the clock with tick size: 1.0
+2023-07-14 05:28:33,382 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2023-07-14 05:28:33,490 - 1 - hummingbot.core.network_iterator - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2023-07-14 05:28:35,121 - 1 - hummingbot.core.data_type.order_book_tracker - INFO - Initialized order book for ETH-USDT. 1/1 completed.
+2023-07-14 05:28:35,724 - 1 - hummingbot.connector.exchange.kucoin.kucoin_api_order_book_data_source.KucoinAPIOrderBookDataSource - INFO - Subscribed to public order book and trade channels...
+2023-07-14 05:28:37,276 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (ETH-USDT) Creating 1 bid orders at (Size, Price): ['0.0001 ETH, 1994.734 USDT']
+2023-07-14 05:28:37,313 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (ETH-USDT) Creating 1 ask orders at (Size, Price): ['0.0001 ETH, 2018.816 USDT']
+2023-07-14 05:28:37,646 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1689312517.0, "type": "OrderType.LIMIT", "trading_pair": "ETH-USDT", "amount": "0.0001000", "price": "1994.7340000000", "order_id": "buy://ETH-USDT/5ebf812cd0ef78726f53627afc", "creation_timestamp": 1689312517.0, "exchange_order_id": null, "leverage": 1, "position": "NIL", "event_name": "BuyOrderCreatedEvent", "event_source": "None_PaperTrade"}
+2023-07-14 05:28:37,911 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1689312517.0, "type": "OrderType.LIMIT", "trading_pair": "ETH-USDT", "amount": "0.0001000", "price": "2018.8160000000", "order_id": "sell://ETH-USDT/ac92c0a6c261afdb04d6fa7f7d", "creation_timestamp": 1689312517.0, "exchange_order_id": null, "leverage": 1, "position": "NIL", "event_name": "SellOrderCreatedEvent", "event_source": "None_PaperTrade"}
+2023-07-14 05:28:38,067 - 1 - hummingbot.connector.time_synchronizer - NETWORK - Error getting server time.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/connector/time_synchronizer.py", line 65, in update_server_time_offset_with_time_provider
+    server_time_ms: float = await time_provider
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_web_utils.py", line 69, in get_current_server_time
+    response = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/time. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:28:38,078 - 1 - hummingbot.connector.time_synchronizer - WARNING - Could not refresh server time. Check network connection.
+2023-07-14 05:28:38,471 - 1 - hummingbot.core.rate_oracle.sources.rate_source_base - ERROR - Unexpected error while retrieving rates from Binance. Check the log file for more info.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/core/rate_oracle/sources/binance_rate_source.py", line 57, in _get_binance_prices
+    pairs_prices = await exchange.get_all_pairs_prices()
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_exchange.py", line 120, in get_all_pairs_prices
+    pairs_prices = await self._api_get(path_url=CONSTANTS.TICKER_BOOK_PATH_URL)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 892, in _api_get
+    return await self._api_request(*args, **kwargs)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 934, in _api_request
+    request_result = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/ticker/bookTicker. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:29:38,553 - 1 - hummingbot.connector.time_synchronizer - NETWORK - Error getting server time.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/connector/time_synchronizer.py", line 65, in update_server_time_offset_with_time_provider
+    server_time_ms: float = await time_provider
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_web_utils.py", line 69, in get_current_server_time
+    response = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/time. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:29:38,559 - 1 - hummingbot.connector.time_synchronizer - WARNING - Could not refresh server time. Check network connection.
+2023-07-14 05:29:38,754 - 1 - hummingbot.core.rate_oracle.sources.rate_source_base - ERROR - Unexpected error while retrieving rates from Binance. Check the log file for more info.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/core/rate_oracle/sources/binance_rate_source.py", line 57, in _get_binance_prices
+    pairs_prices = await exchange.get_all_pairs_prices()
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_exchange.py", line 120, in get_all_pairs_prices
+    pairs_prices = await self._api_get(path_url=CONSTANTS.TICKER_BOOK_PATH_URL)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 892, in _api_get
+    return await self._api_request(*args, **kwargs)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 934, in _api_request
+    request_result = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/ticker/bookTicker. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:30:38,865 - 1 - hummingbot.connector.time_synchronizer - NETWORK - Error getting server time.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/connector/time_synchronizer.py", line 65, in update_server_time_offset_with_time_provider
+    server_time_ms: float = await time_provider
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_web_utils.py", line 69, in get_current_server_time
+    response = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/time. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:30:38,870 - 1 - hummingbot.connector.time_synchronizer - WARNING - Could not refresh server time. Check network connection.
+2023-07-14 05:30:39,039 - 1 - hummingbot.core.rate_oracle.sources.rate_source_base - ERROR - Unexpected error while retrieving rates from Binance. Check the log file for more info.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/core/rate_oracle/sources/binance_rate_source.py", line 57, in _get_binance_prices
+    pairs_prices = await exchange.get_all_pairs_prices()
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_exchange.py", line 120, in get_all_pairs_prices
+    pairs_prices = await self._api_get(path_url=CONSTANTS.TICKER_BOOK_PATH_URL)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 892, in _api_get
+    return await self._api_request(*args, **kwargs)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 934, in _api_request
+    request_result = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/ticker/bookTicker. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:31:39,125 - 1 - hummingbot.connector.time_synchronizer - NETWORK - Error getting server time.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/connector/time_synchronizer.py", line 65, in update_server_time_offset_with_time_provider
+    server_time_ms: float = await time_provider
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_web_utils.py", line 69, in get_current_server_time
+    response = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/time. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:31:39,129 - 1 - hummingbot.connector.time_synchronizer - WARNING - Could not refresh server time. Check network connection.
+2023-07-14 05:31:39,537 - 1 - hummingbot.core.rate_oracle.sources.rate_source_base - ERROR - Unexpected error while retrieving rates from Binance. Check the log file for more info.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/core/rate_oracle/sources/binance_rate_source.py", line 57, in _get_binance_prices
+    pairs_prices = await exchange.get_all_pairs_prices()
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_exchange.py", line 120, in get_all_pairs_prices
+    pairs_prices = await self._api_get(path_url=CONSTANTS.TICKER_BOOK_PATH_URL)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 892, in _api_get
+    return await self._api_request(*args, **kwargs)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 934, in _api_request
+    request_result = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/ticker/bookTicker. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:32:39,598 - 1 - hummingbot.connector.time_synchronizer - NETWORK - Error getting server time.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/connector/time_synchronizer.py", line 65, in update_server_time_offset_with_time_provider
+    server_time_ms: float = await time_provider
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_web_utils.py", line 69, in get_current_server_time
+    response = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/time. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:32:39,601 - 1 - hummingbot.connector.time_synchronizer - WARNING - Could not refresh server time. Check network connection.
+2023-07-14 05:32:39,826 - 1 - hummingbot.core.rate_oracle.sources.rate_source_base - ERROR - Unexpected error while retrieving rates from Binance. Check the log file for more info.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/core/rate_oracle/sources/binance_rate_source.py", line 57, in _get_binance_prices
+    pairs_prices = await exchange.get_all_pairs_prices()
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_exchange.py", line 120, in get_all_pairs_prices
+    pairs_prices = await self._api_get(path_url=CONSTANTS.TICKER_BOOK_PATH_URL)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 892, in _api_get
+    return await self._api_request(*args, **kwargs)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 934, in _api_request
+    request_result = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/ticker/bookTicker. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:33:06,133 - 1 - hummingbot.client.hummingbot_application - INFO - MQTT Bridge disconnected
+2023-07-14 05:33:06,288 - 1 - hummingbot.client.hummingbot_application - INFO - Connecting MQTT Bridge...
+2023-07-14 05:33:07,293 - 1 - hummingbot.client.hummingbot_application - INFO - MQTT Bridge connected with success.
+2023-07-14 05:33:40,111 - 1 - hummingbot.connector.time_synchronizer - NETWORK - Error getting server time.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/connector/time_synchronizer.py", line 65, in update_server_time_offset_with_time_provider
+    server_time_ms: float = await time_provider
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_web_utils.py", line 69, in get_current_server_time
+    response = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/time. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:33:40,116 - 1 - hummingbot.connector.time_synchronizer - WARNING - Could not refresh server time. Check network connection.
+2023-07-14 05:33:40,396 - 1 - hummingbot.core.rate_oracle.sources.rate_source_base - ERROR - Unexpected error while retrieving rates from Binance. Check the log file for more info.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/core/rate_oracle/sources/binance_rate_source.py", line 57, in _get_binance_prices
+    pairs_prices = await exchange.get_all_pairs_prices()
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_exchange.py", line 120, in get_all_pairs_prices
+    pairs_prices = await self._api_get(path_url=CONSTANTS.TICKER_BOOK_PATH_URL)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 892, in _api_get
+    return await self._api_request(*args, **kwargs)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 934, in _api_request
+    request_result = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/ticker/bookTicker. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:34:40,517 - 1 - hummingbot.connector.time_synchronizer - NETWORK - Error getting server time.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/connector/time_synchronizer.py", line 65, in update_server_time_offset_with_time_provider
+    server_time_ms: float = await time_provider
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_web_utils.py", line 69, in get_current_server_time
+    response = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/time. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:34:40,522 - 1 - hummingbot.connector.time_synchronizer - WARNING - Could not refresh server time. Check network connection.
+2023-07-14 05:34:40,699 - 1 - hummingbot.core.rate_oracle.sources.rate_source_base - ERROR - Unexpected error while retrieving rates from Binance. Check the log file for more info.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/core/rate_oracle/sources/binance_rate_source.py", line 57, in _get_binance_prices
+    pairs_prices = await exchange.get_all_pairs_prices()
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_exchange.py", line 120, in get_all_pairs_prices
+    pairs_prices = await self._api_get(path_url=CONSTANTS.TICKER_BOOK_PATH_URL)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 892, in _api_get
+    return await self._api_request(*args, **kwargs)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 934, in _api_request
+    request_result = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/ticker/bookTicker. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:35:40,792 - 1 - hummingbot.connector.time_synchronizer - NETWORK - Error getting server time.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/connector/time_synchronizer.py", line 65, in update_server_time_offset_with_time_provider
+    server_time_ms: float = await time_provider
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_web_utils.py", line 69, in get_current_server_time
+    response = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/time. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:35:40,796 - 1 - hummingbot.connector.time_synchronizer - WARNING - Could not refresh server time. Check network connection.
+2023-07-14 05:35:41,000 - 1 - hummingbot.core.rate_oracle.sources.rate_source_base - ERROR - Unexpected error while retrieving rates from Binance. Check the log file for more info.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/core/rate_oracle/sources/binance_rate_source.py", line 57, in _get_binance_prices
+    pairs_prices = await exchange.get_all_pairs_prices()
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_exchange.py", line 120, in get_all_pairs_prices
+    pairs_prices = await self._api_get(path_url=CONSTANTS.TICKER_BOOK_PATH_URL)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 892, in _api_get
+    return await self._api_request(*args, **kwargs)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 934, in _api_request
+    request_result = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/ticker/bookTicker. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:36:41,122 - 1 - hummingbot.connector.time_synchronizer - NETWORK - Error getting server time.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/connector/time_synchronizer.py", line 65, in update_server_time_offset_with_time_provider
+    server_time_ms: float = await time_provider
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_web_utils.py", line 69, in get_current_server_time
+    response = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/time. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:36:41,128 - 1 - hummingbot.connector.time_synchronizer - WARNING - Could not refresh server time. Check network connection.
+2023-07-14 05:36:41,409 - 1 - hummingbot.core.rate_oracle.sources.rate_source_base - ERROR - Unexpected error while retrieving rates from Binance. Check the log file for more info.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/core/rate_oracle/sources/binance_rate_source.py", line 57, in _get_binance_prices
+    pairs_prices = await exchange.get_all_pairs_prices()
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_exchange.py", line 120, in get_all_pairs_prices
+    pairs_prices = await self._api_get(path_url=CONSTANTS.TICKER_BOOK_PATH_URL)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 892, in _api_get
+    return await self._api_request(*args, **kwargs)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 934, in _api_request
+    request_result = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/ticker/bookTicker. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:37:42,118 - 1 - hummingbot.connector.time_synchronizer - NETWORK - Error getting server time.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/connector/time_synchronizer.py", line 65, in update_server_time_offset_with_time_provider
+    server_time_ms: float = await time_provider
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_web_utils.py", line 69, in get_current_server_time
+    response = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/time. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:37:42,122 - 1 - hummingbot.connector.time_synchronizer - WARNING - Could not refresh server time. Check network connection.
+2023-07-14 05:37:42,347 - 1 - hummingbot.core.rate_oracle.sources.rate_source_base - ERROR - Unexpected error while retrieving rates from Binance. Check the log file for more info.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/core/rate_oracle/sources/binance_rate_source.py", line 57, in _get_binance_prices
+    pairs_prices = await exchange.get_all_pairs_prices()
+  File "/home/hummingbot/hummingbot/connector/exchange/binance/binance_exchange.py", line 120, in get_all_pairs_prices
+    pairs_prices = await self._api_get(path_url=CONSTANTS.TICKER_BOOK_PATH_URL)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 892, in _api_get
+    return await self._api_request(*args, **kwargs)
+  File "/home/hummingbot/hummingbot/connector/exchange_py_base.py", line 934, in _api_request
+    request_result = await rest_assistant.execute_request(
+  File "/home/hummingbot/hummingbot/core/web_assistant/rest_assistant.py", line 75, in execute_request
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+OSError: Error executing request GET https://api.binance.com/api/v3/ticker/bookTicker. HTTP status is 451. Error: {
+  "code": 0,
+  "msg": "Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error."
+}
+2023-07-14 05:38:38,220 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2023-07-14 05:38:38,285 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1689313118.0, "order_id": "buy://ETH-USDT/5ebf812cd0ef78726f53627afc", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "None_PaperTrade"}
+2023-07-14 05:38:38,358 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1689313118.0, "order_id": "sell://ETH-USDT/ac92c0a6c261afdb04d6fa7f7d", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "None_PaperTrade"}

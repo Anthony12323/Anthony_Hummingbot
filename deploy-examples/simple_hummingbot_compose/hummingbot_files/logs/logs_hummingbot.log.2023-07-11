@@ -1,0 +1,14 @@
+2023-07-11 16:06:04,323 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway is disconnected, attempting to reconnect.
+2023-07-11 16:06:21,626 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway successfully reconnected.
+2023-07-12 03:43:15,491 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway is disconnected, attempting to reconnect.
+2023-07-12 03:43:25,907 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway successfully reconnected.
+2023-07-12 04:00:01,075 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway is disconnected, attempting to reconnect.
+2023-07-12 04:00:11,656 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway successfully reconnected.
+2023-07-12 07:00:00,731 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway is disconnected, attempting to reconnect.
+2023-07-12 07:00:11,043 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway successfully reconnected.
+2023-07-12 10:18:43,542 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway is disconnected, attempting to reconnect.
+2023-07-12 10:18:53,728 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway successfully reconnected.
+2023-07-12 12:19:29,775 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway is disconnected, attempting to reconnect.
+2023-07-12 12:19:40,052 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway successfully reconnected.
+2023-07-12 13:45:01,723 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway is disconnected, attempting to reconnect.
+2023-07-12 13:45:12,759 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway successfully reconnected.

@@ -1,0 +1,16 @@
+2023-07-13 03:06:46,161 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway is disconnected, attempting to reconnect.
+2023-07-13 03:06:56,673 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway successfully reconnected.
+2023-07-13 15:25:41,354 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway is disconnected, attempting to reconnect.
+2023-07-13 15:25:54,446 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway successfully reconnected.
+2023-07-13 15:41:39,878 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway is disconnected, attempting to reconnect.
+2023-07-13 15:41:50,209 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway successfully reconnected.
+2023-07-13 17:42:25,676 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway is disconnected, attempting to reconnect.
+2023-07-13 17:42:35,924 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway successfully reconnected.
+2023-07-13 18:26:37,522 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway is disconnected, attempting to reconnect.
+2023-07-13 18:26:47,796 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway successfully reconnected.
+2023-07-13 21:04:40,491 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway is disconnected, attempting to reconnect.
+2023-07-13 21:04:51,248 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway successfully reconnected.
+2023-07-13 23:05:32,632 - 1 - hummingbot.client.hummingbot_application - INFO - MQTT Bridge disconnected
+2023-07-13 23:05:32,643 - 1 - hummingbot.remote_iface.mqtt - INFO - Created Node <hbot.hbot1>
+2023-07-13 23:05:32,809 - 1 - hummingbot.client.hummingbot_application - INFO - Connecting MQTT Bridge...
+2023-07-13 23:05:33,817 - 1 - hummingbot.client.hummingbot_application - INFO - MQTT Bridge connected with success.

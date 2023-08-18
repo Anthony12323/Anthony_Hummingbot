@@ -1,0 +1,58 @@
+version: "3.9"
+services:
+  hummingbot-1:
+    container_name: hummingbot-1
+    image: hummingbot/hummingbot:latest
+    volumes:
+      - "./hummingbot_files/conf:/home/hummingbot/conf"
+      - "./hummingbot_files/conf/connectors:/home/hummingbot/conf/connectors"
+      - "./hummingbot_files/conf/strategies:/home/hummingbot/conf/strategies"
+      - "./hummingbot_files/logs:/home/hummingbot/logs"
+      - "./hummingbot_files/data:/home/hummingbot/data"
+      - "./hummingbot_files/scripts:/home/hummingbot/scripts"
+      - "./hummingbot_files/certs:/home/hummingbot/certs"
+    # environment:
+    #   - CONFIG_PASSWORD=[password]
+    logging:
+      driver: "json-file"
+      options:
+          max-size: "10m"
+          max-file: "5"
+    tty: true
+    stdin_open: true
+    network_mode: host
+
+  hummingbot-2:
+    container_name: hummingbot-2
+    image: hummingbot/hummingbot:latest
+    volumes:
+      - "./hummingbot_files/conf:/home/hummingbot/conf"
+      - "./hummingbot_files/conf/connectors:/home/hummingbot/conf/connectors"
+      - "./hummingbot_files/conf/strategies:/home/hummingbot/conf/strategies"
+      - "./hummingbot_files/logs:/home/hummingbot/logs"
+      - "./hummingbot_files/data:/home/hummingbot/data"
+      - "./hummingbot_files/scripts:/home/hummingbot/scripts"
+      - "./hummingbot_files/certs:/home/hummingbot/certs"
+    # environment:
+    #   - CONFIG_PASSWORD=[password]
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+    tty: true
+    stdin_open: true
+    network_mode: host
+
+  gateway:
+    container_name: gateway
+    image: hummingbot/gateway:latest
+    ports:
+      - "15888:15888"
+      - "8080:8080"
+    volumes:
+      - "./gateway_files/conf:/usr/src/app/conf"
+      - "./gateway_files/logs:/usr/src/app/logs"
+      - "./hummingbot_files/certs:/usr/src/app/certs"
+    # environment:
+    #   - GATEWAY_PASSPHRASE=[passphrase]

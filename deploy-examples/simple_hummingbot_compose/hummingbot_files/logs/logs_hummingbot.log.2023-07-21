@@ -1,0 +1,2 @@
+2023-07-21 17:16:50,774 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway is disconnected, attempting to reconnect.
+2023-07-21 17:17:01,699 - 1 - hummingbot.client.hummingbot_application - WARNING - MQTT Gateway successfully reconnected.
